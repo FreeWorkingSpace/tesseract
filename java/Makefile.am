@@ -36,8 +36,8 @@ SCROLLVIEW_CLASSES = \
 	com/google/scrollview/ScrollView.class
 
 SCROLLVIEW_LIBS = \
-	piccolo2d-core-3.0.jar \
-	piccolo2d-extras-3.0.jar \
+	piccolo2d-core-3.0.1.jar \
+	piccolo2d-extras-3.0.1.jar \
 	jaxb-api-2.3.1.jar
 
 CLASSPATH = piccolo2d-core-3.0.jar:piccolo2d-extras-3.0.jar:jaxb-api-2.3.1.jar
@@ -51,9 +51,9 @@ $(SCROLLVIEW_CLASSES) : $(SCROLLVIEW_FILES) $(SCROLLVIEW_LIBS)
 
 .PHONY: fetch-jars
 fetch-jars $(SCROLLVIEW_LIBS):
-	curl -L http://search.maven.org/remotecontent?filepath=org/piccolo2d/piccolo2d-core/3.0/piccolo2d-core-3.0.jar > piccolo2d-core-3.0.jar
-	curl -L http://search.maven.org/remotecontent?filepath=org/piccolo2d/piccolo2d-extras/3.0/piccolo2d-extras-3.0.jar > piccolo2d-extras-3.0.jar
-	curl -L http://search.maven.org/remotecontent?filepath=javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar > jaxb-api-2.3.1.jar
+	curl -s -S -L -O https://search.maven.org/remotecontent?filepath=org/piccolo2d/piccolo2d-core/3.0.1/piccolo2d-core-3.0.1.jar
+	curl -s -S -L -O https://search.maven.org/remotecontent?filepath=org/piccolo2d/piccolo2d-extras/3.0.1/piccolo2d-extras-3.0.1.jar
+	curl -s -S -L -O https://search.maven.org/remotecontent?filepath=javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar
 
 .PHONY: install-jars
 install-jars : ScrollView.jar
