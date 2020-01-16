@@ -40,7 +40,7 @@ SCROLLVIEW_LIBS = \
 	piccolo2d-extras-3.0.1.jar \
 	jaxb-api-2.3.1.jar
 
-CLASSPATH = piccolo2d-core-3.0.jar:piccolo2d-extras-3.0.jar:jaxb-api-2.3.1.jar
+CLASSPATH = piccolo2d-core-3.0.1.jar:piccolo2d-extras-3.0.1.jar:jaxb-api-2.3.1.jar
 
 ScrollView.jar : $(SCROLLVIEW_CLASSES)
 	$(JAR) cfm $@ $(srcdir)/Manifest.txt com/google/scrollview/*.class \
