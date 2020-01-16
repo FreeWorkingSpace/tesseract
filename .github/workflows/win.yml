@@ -32,9 +32,9 @@ jobs:
     - name: Make winsetup
       run: make html winsetup prefix=$PWD/usr/x86_64-w64-mingw32
     - name: Copy result for upload
-      run: cp nsis/tesseract-ocr-w64-setup-*.exe tesseract-ocr-w64-setup-latest.exe
+      run: mkdir -p dist && cp nsis/tesseract-ocr-w64-setup-*.exe dist/
 
     - uses: actions/upload-artifact@v1
       with:
-        name: Tesseract for Windows
-        path: tesseract-ocr-w64-setup-latest.exe
+        name: Tesseract Installer for Windows
+        path: dist
