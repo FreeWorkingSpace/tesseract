@@ -31,10 +31,10 @@ jobs:
       run: make training-install prefix=$PWD/usr/x86_64-w64-mingw32
     - name: Make winsetup
       run: make html winsetup prefix=$PWD/usr/x86_64-w64-mingw32
+    - name: Copy result for upload
+      run: cp nsis/tesseract-ocr-w64-setup-*.exe tesseract-ocr-w64-setup-latest.exe
 
     - uses: actions/upload-artifact@v1
       with:
         name: Tesseract for Windows
-        path: nsis/tesseract-ocr-*.exe
-
-# run: sudo apt-get update && sudo apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config libpango1.0-dev
+        path: tesseract-ocr-w64-setup-latest.exe
