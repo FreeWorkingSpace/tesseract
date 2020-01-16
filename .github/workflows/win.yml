@@ -32,4 +32,9 @@ jobs:
     - name: Make winsetup
       run: make html winsetup prefix=$PWD/usr/x86_64-w64-mingw32
 
-      # run: sudo apt-get update && sudo apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config libpango1.0-dev
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Tesseract for Windows
+        path: nsis/tesseract-ocr-*.exe
+
+# run: sudo apt-get update && sudo apt-get install automake ca-certificates g++ git libtool libleptonica-dev make pkg-config libpango1.0-dev
